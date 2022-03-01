@@ -105,17 +105,22 @@ return playlist;
 
 
 */
+function updateReportCard(reportCard,newGrade) {
+ reportCard.grades.push(newGrade);
+ reportCard.lowestGrade = Math.min(...reportCard.grades);
+ reportCard.highestGrade = Math.max(...reportCard.grades);
+ let value = 0;
+    for (let grade of reportCard.grades) {
+        value += grade;
+        
+    }
 
 
-function updateReportCard(reportCard,88) {
+reportCard.averageGrade = value / reportCard.grades.length;
+return reportCard;
 
-reportCard.highestGrade.push(99);
- reportCard.lowestGrade.push(65);
-
-
-
-return reportcard;
 }
+
 
 
 
